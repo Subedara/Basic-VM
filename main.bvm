@@ -1,0 +1,5 @@
+exec
+move 1 2
+move 2 3
+add 4 2 1
+halt
