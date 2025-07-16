@@ -1,7 +1,27 @@
 #include <iostream>
+#include <vector>
 #include <fstream>
 
 using namespace std;
+
+
+
+vector<string> split(string s) {
+    vector<string> res = {};
+    string word = "";
+    for (char c : s) {
+        if (c == ' ') {
+            res.push_back(word);
+            word = "";
+            continue;
+        }
+        word += c;
+    }
+    if (!word.empty()) {
+        res.push_back(word);
+    }
+    return res;
+}
 
 // Main logic
 int main() {
