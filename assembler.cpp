@@ -5,7 +5,7 @@
 using namespace std;
 
 
-
+// Split function to make things easier
 vector<string> split(string s) {
     vector<string> res = {};
     string word = "";
@@ -34,7 +34,7 @@ int main() {
     ofstream outputFile(output);
     string line;
     while(getline(file, line)) {
-        outputFile << line << "\n";
+        vector<string> newLine = split(line);
     }
 
     return 0;
