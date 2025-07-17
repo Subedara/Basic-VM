@@ -1,26 +1,36 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <unordered_map>
 
 using namespace std;
 
 
-// Split function to make things easier
-vector<string> split(string s) {
-    vector<string> res = {};
-    string word = "";
-    for (char c : s) {
-        if (c == ' ') {
-            res.push_back(word);
-            word = "";
-            continue;
+namespace extrafuncs {
+    vector<string> split(string s) {
+        vector<string> res = {};
+        string word = "";
+        for (char c : s) {
+            if (c == ' ') {
+                res.push_back(word);
+                word = "";
+                continue;
+            }
+            word += c;
         }
-        word += c;
+        if (!word.empty()) {
+            res.push_back(word);
+        }
+        return res;
     }
-    if (!word.empty()) {
-        res.push_back(word);
-    }
-    return res;
+    
+}
+
+// Split function to make things easier
+using namespace extrafuncs;
+
+vector<string> opcoder(vector<string> line) {
+
 }
 
 // Main logic
